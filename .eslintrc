@@ -1,0 +1,107 @@
+{
+  "extends": [
+	"plugin:@typescript-eslint/recommended",
+	"plugin:react/recommended",
+	"plugin:lodash/recommended",
+	"prettier"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+	"react",
+	"@typescript-eslint",
+	"react-hooks",
+	"testing-library"
+  ],
+  "ignorePatterns": [
+	"public/**/*.js",
+	"config/**/*.js",
+	"*.test.ts*",
+	"!*.tl.test.ts*"
+  ],
+  "overrides": [
+	{
+	  "files": [
+		"**/tests/**/*.[jt]s?(x)",
+		"**/?(*.)+(spec|test).[jt]s?(x)"
+	  ],
+	  "extends": [
+		"plugin:testing-library/react"
+	  ],
+	  "rules": {
+		"testing-library/prefer-user-event": "warn",
+		"testing-library/no-await-sync-events": "warn",
+		"testing-library/prefer-wait-for": "warn"
+	  }
+	}
+  ],
+  "env": {
+	"browser": true,
+	"commonjs": true,
+	"es6": true
+  },
+  "parserOptions": {
+	"ecmaVersion": 6,
+	"sourceType": "module",
+	"ecmaFeatures": {
+	  "jsx": true
+	}
+  },
+  "settings": {
+	"react": {
+	  "version": "detect"
+	},
+	"linkComponents": [
+	  // Components used as alternatives to <a> for linking, eg. <Link to={ url } />
+	  "Hyperlink",
+	  {
+		"name": "Link",
+		"linkAttribute": "to"
+	  }
+	]
+  },
+  "rules": {
+	"no-console": "warn",
+	"@typescript-eslint/no-inferrable-types": "off",
+	"@typescript-eslint/no-empty-function": "off",
+	"@typescript-eslint/ban-ts-ignore": "off",
+	"@typescript-eslint/no-use-before-define": "error",
+	"strict": [
+	  "error",
+	  "global"
+	],
+	"curly": "error",
+	"linebreak-style": [
+	  "error",
+	  "unix"
+	],
+	"semi": [
+	  "error",
+	  "always"
+	],
+	"lodash/import-scope": [
+	  "error",
+	  "member"
+	],
+	"lodash/prefer-flat-map": "error",
+	"lodash/no-extra-args": "error",
+	"lodash/prefer-constant": "warn",
+	"lodash/prefer-immutable-method": "error",
+	"lodash/prefer-lodash-method": "error",
+	"lodash/prefer-invoke-map": "error",
+	"lodash/prefer-startswith": "error",
+	"lodash/prefer-noop": "warn",
+	"lodash/prefer-includes": "error",
+	"react/prop-types": "warn",
+	"react/display-name": "off",
+	"prefer-const": "warn",
+	"@typescript-eslint/ban-types": 0,
+	"@typescript-eslint/ban-ts-comment": 0,
+	"@typescript-eslint/no-var-requires": 0,
+	"@typescript-eslint/explicit-module-boundary-types": 0,
+	"@typescript-eslint/prefer-as-const": 0,
+	"indent": [
+	  "error",
+	  "tab"
+	]
+  }
+}
