@@ -1,13 +1,23 @@
+import {IssueType, UserType} from "../types";
 import currentUser from './currentUser.json';
 import issues from './issues.json';
-import {IssueType, UserType} from "../types";
 
 class MW {
-	currentUser = currentUser as UserType;
-	issues = issues as IssueType[];
+	private readonly currentUser: UserType;
+	private readonly issues: IssueType[];
 
-	public getCurrentUser = (): UserType => currentUser;
-	public getIssues = (): IssueType[] => issues;
+	constructor() {
+		this.currentUser = currentUser as UserType;
+		this.issues = issues as IssueType[];
+	}
+
+	public getIssues(): IssueType[] {
+		return this.issues;
+	};
+
+	public getCurrentUser(): UserType {
+		return this.currentUser;
+	}
 }
 
 export default MW;
