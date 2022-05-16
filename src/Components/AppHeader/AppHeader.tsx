@@ -1,15 +1,15 @@
-import React, {MouseEvent, useContext, useState} from "react";
+import React, {MouseEvent, ReactElement, useContext, useState} from "react";
 import {IconButton, Menu, MenuItem, Typography} from "@mui/material";
 import {Close as CloseIcon, Menu as MenuIcon} from "@mui/icons-material";
 import {Link} from "react-router-dom";
 import classnames from "classnames";
 
-import Avatar from '../Avatar/Avatar';
 import {MWContext} from "../../App";
+import Avatar from '../Avatar/Avatar';
 
 import "./AppHeader.scss";
 
-const AppHeader = () => {
+const AppHeader = (): ReactElement => {
 	const mw = useContext(MWContext);
 
 	const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
