@@ -1,13 +1,21 @@
-import React, {MouseEvent, useState} from "react";
-import {Avatar, IconButton, Menu, MenuItem, Typography} from "@mui/material";
-import {Menu as MenuIcon, Close as CloseIcon} from "@mui/icons-material";
+import React, {MouseEvent, useContext, useState} from "react";
+import {IconButton, Menu, MenuItem, Typography} from "@mui/material";
+import {Close as CloseIcon, Menu as MenuIcon} from "@mui/icons-material";
 import {Link} from "react-router-dom";
 import classnames from "classnames";
+
+import Avatar from '../Avatar/Avatar';
+import {MWContext} from "../../App";
+
 import "./AppHeader.scss";
 
 const AppHeader = () => {
+	const mw = useContext(MWContext);
+
 	const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
 	const open: boolean = Boolean(anchorEl);
+	const user = mw.getCurrentUser();
+
 	const handleClick = (event: MouseEvent<HTMLButtonElement>): void => {
 		setAnchorEl(event.currentTarget);
 	};
@@ -20,7 +28,7 @@ const AppHeader = () => {
 			<div className="name">
 				<Typography variant="h4">CTB</Typography>
 			</div>
-			<Avatar className="user-info">T</Avatar>
+			<Avatar user={user}/>
 			<IconButton
 				id="icon-button"
 				className={classnames("more-actions-button", {"more-actions-button_open": open})}
@@ -30,7 +38,7 @@ const AppHeader = () => {
 				onClick={handleClick}
 				size="large"
 			>
-				{open ? <CloseIcon fontSize="inherit"/> : <MenuIcon font-size="inherit"/>}
+				{open ? <CloseIcon fontSize="inherit"/> : <MenuIcon fontSize="inherit"/>}
 			</IconButton>
 			<Menu
 				anchorEl={anchorEl}
