@@ -1,0 +1,51 @@
+#issue-preview {
+  display: grid;
+  grid-template-rows: 30px 100px;
+  grid-template-columns: 30% auto 20%;
+  grid-template-areas:
+		"title title status"
+		"preview data user";
+  padding: 10px;
+  vertical-align: baseline;
+
+  .title {
+	grid-area: title;
+	font-weight: bold;
+  }
+
+  .status {
+	grid-area: status;
+	height: 25px;
+	margin-left: auto;
+	margin-right: 0;
+  }
+
+  .preview {
+	justify-self: center;
+	grid-area: preview;
+	width: auto;
+	max-width: 100%;
+	max-height: 100px;
+  }
+
+  .data {
+	grid-area: data;
+	color: grey;
+
+	p {
+	  margin: 0 0 5px 10px;
+	}
+  }
+
+  .user {
+	grid-area: user;
+
+	.user-avatar {
+	  position: relative;
+	  top: 40%;
+	  margin-right: 0;
+	  margin-left: auto;
+	  transform: scale(0.7);
+	}
+  }
+}
