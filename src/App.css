@@ -1,8 +1,11 @@
-.App-header {
+.App-body {
+  margin-top: 62px;
   width: 100%;
 }
-.App-body {
-  width: 100%;
+
+.link {
+  text-decoration: none;
+  color: black;
 }
 
 /*# sourceMappingURL=App.css.map */

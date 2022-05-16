@@ -1,0 +1,34 @@
+.App-header {
+  width: 100%;
+  height: 60px;
+  border-bottom: 2px solid darkgrey;
+  position: absolute;
+  top: 0;
+  display: grid;
+  grid-template-columns: 1fr 60px 60px;
+  grid-template-areas: "name user-info more-actions";
+
+  .name {
+	grid-area: name;
+	padding: 10px;
+  }
+
+  .user-info {
+	grid-area: user-info;
+	margin: auto;
+  }
+
+  .more-actions {
+	&-button {
+	  grid-area: more-actions;
+
+	  &_open {
+		background-color: darkgrey;
+	  }
+	}
+  }
+}
+
+.App-header--more-actions-menu-list {
+  background-color: darkgrey;
+}

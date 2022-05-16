@@ -1,7 +1,8 @@
 import React from "react";
-import "./App.scss";
 import {createTheme, ThemeProvider} from "@mui/material";
-import {BrowserRouter} from "react-router-dom";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import AppHeader from "./Components/AppHeader/AppHeader";
+import "./App.scss";
 
 const theme = createTheme({});
 
@@ -10,11 +11,12 @@ function App() {
 		<ThemeProvider theme={theme}>
 			<BrowserRouter>
 				<div className="App">
-					<header className="App-header">
-						<p>Header</p>
-					</header>
+					<AppHeader/>
 					<body className="App-body">
-						<p>Just body text.</p>
+						<Routes>
+							<Route path="/" element={<p>Home</p>}/>
+							<Route path="/About" element={<p>About</p>}/>
+						</Routes>
 					</body>
 				</div>
 			</BrowserRouter>

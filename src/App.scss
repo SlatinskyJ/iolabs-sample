@@ -1,9 +1,11 @@
 .App {
-  &-header {
-	width: 100%;
-  }
-
   &-body {
+	margin-top: 62px;
 	width: 100%;
   }
+}
+
+.link {
+  text-decoration: none;
+  color: black;
 }
