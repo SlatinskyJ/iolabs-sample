@@ -1,22 +1,31 @@
-import React from "react";
-import "./App.scss";
+import React, {createContext} from "react";
 import {createTheme, ThemeProvider} from "@mui/material";
-import {BrowserRouter} from "react-router-dom";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+
+import AppHeader from "./Components/AppHeader/AppHeader";
+import MW from './Components/utils/MW/MW';
+import Home from "./Components/Home/Home";
+
+import "./App.scss";
 
 const theme = createTheme({});
+const mw = new MW();
+export const MWContext = createContext(mw);
 
 function App() {
+
 	return (
 		<ThemeProvider theme={theme}>
 			<BrowserRouter>
-				<div className="App">
-					<header className="App-header">
-						<p>Header</p>
-					</header>
-					<body className="App-body">
-						<p>Just body text.</p>
-					</body>
-				</div>
+				<MWContext.Provider value={mw}>
+					<AppHeader/>
+					<div className="App-body">
+						<Routes>
+							<Route path="/" element={<Home/>}/>
+							<Route path="/About" element={<p>About</p>}/>
+						</Routes>
+					</div>
+				</MWContext.Provider>
 			</BrowserRouter>
 		</ThemeProvider>
 	);

@@ -1,9 +1,14 @@
 .App {
-  &-header {
-	width: 100%;
-  }
-
   &-body {
+	position: absolute;
+	top: 62px;
+	bottom: 0;
 	width: 100%;
+	overflow: auto;
   }
+}
+
+.link {
+  text-decoration: none;
+  color: black;
 }

@@ -1,0 +1,17 @@
+#Home {
+  height: 100%;
+}
+#Home .header {
+  padding: 5px 10px;
+  border-bottom: 2px solid lightgrey;
+}
+#Home .pagination-container {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+/*# sourceMappingURL=Home.css.map */
