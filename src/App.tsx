@@ -5,6 +5,7 @@ import {BrowserRouter, Route, Routes} from "react-router-dom";
 import AppHeader from "./Components/AppHeader/AppHeader";
 import MW from './Components/utils/MW/MW';
 import Home from "./Components/Home/Home";
+import IssueDetail from "./Components/IssueDetail/IssueDetail";
 
 import "./App.scss";
 
@@ -22,6 +23,7 @@ function App() {
 					<div className="App-body">
 						<Routes>
 							<Route path="/" element={<Home/>}/>
+							<Route path="/issue/:id" element={<IssueDetail/>}/>
 							<Route path="/About" element={<p>About</p>}/>
 						</Routes>
 					</div>

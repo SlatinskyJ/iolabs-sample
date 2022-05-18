@@ -1,6 +1,7 @@
 import {IssueType, UserType} from "../types";
 import currentUser from './currentUser.json';
 import issues from './issues.json';
+import {find} from "lodash";
 
 class MW {
 	private readonly currentUser: UserType;
@@ -14,6 +15,10 @@ class MW {
 	public getIssues(): IssueType[] {
 		return this.issues;
 	};
+
+	public getIssue(guid: string): IssueType | undefined {
+		return find(this.issues, {issueGuid: guid});
+	}
 
 	public getCurrentUser(): UserType {
 		return this.currentUser;
