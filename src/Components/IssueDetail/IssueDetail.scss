@@ -1,0 +1,19 @@
+#IssueDetail {
+  height: 100%;
+
+  .header {
+	display: flex;
+	width: calc(100% - 20px);
+	padding: 5px 10px;
+	border-bottom: 2px solid lightgrey;
+  }
+
+  .back-icon {
+	padding-top: 3px;
+	cursor: pointer;
+  }
+
+  .description-container {
+	padding: 10px;
+  }
+}

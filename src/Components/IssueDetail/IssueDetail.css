@@ -1,0 +1,18 @@
+#IssueDetail {
+  height: 100%;
+}
+#IssueDetail .header {
+  display: flex;
+  width: calc(100% - 20px);
+  padding: 5px 10px;
+  border-bottom: 2px solid lightgrey;
+}
+#IssueDetail .back-icon {
+  padding-top: 3px;
+  cursor: pointer;
+}
+#IssueDetail .description-container {
+  padding: 10px;
+}
+
+/*# sourceMappingURL=IssueDetail.css.map */
