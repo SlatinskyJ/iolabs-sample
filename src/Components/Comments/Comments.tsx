@@ -58,10 +58,11 @@ const Comments = ({comments, addComment}: CommentsProps): ReactElement => {
 				<Comment key={index} comment={comment}/>
 			)}
 		</List>
-		<TextField value={inputValue} onChange={handleInputChange}/>
-		<Button variant="contained" onClick={() => {
+		<TextField className="comments-input" value={inputValue} onChange={handleInputChange} autoComplete="off"/>
+		<Button className="comments-submit" variant="contained" onClick={() => {
 			addComment(inputValue);
-		}}>Add Comment</Button>
+			setInputValue('');
+		}}>Send</Button>
 	</div>;
 };
 

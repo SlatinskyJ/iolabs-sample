@@ -1,9 +1,12 @@
 .App-header {
   width: 100%;
+  max-width: 600px;
   height: 60px;
   border-bottom: 2px solid lightgrey;
   position: absolute;
   top: 0;
+  left: 50%;
+  transform: translate(-50%);
   display: grid;
   grid-template-columns: 1fr 60px 60px;
   grid-template-areas: "name user-info more-actions";
