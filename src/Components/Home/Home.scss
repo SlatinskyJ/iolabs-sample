@@ -14,4 +14,11 @@
 	justify-content: center;
 	margin-bottom: 20px;
   }
+
+  .issue-preview-container {
+	&:hover {
+	  background-color: lightgrey;
+	  cursor: pointer;
+	}
+  }
 }
