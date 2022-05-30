@@ -1,22 +1,22 @@
 import React, {ChangeEvent, ReactElement, useContext, useEffect, useState} from 'react';
-import {Pagination, Typography} from "@mui/material";
-import {ceil, map, slice} from "lodash";
+import {Pagination, Typography} from '@mui/material';
+import {ceil, map, slice} from 'lodash';
 
-import {MWContext} from "../../App";
-import IssuePreview from "../IssuePreview/IssuePreview";
-import {IssueType} from "../utils/types";
+import IssuePreview from '../IssuePreview/IssuePreview';
+import {IssueType} from '../utils/types';
+import {MWContext, MWProviderValue} from '../utils/MW/MW';
 
 import './Home.scss';
-import {useNavigate} from "react-router-dom";
+import {useNavigate} from 'react-router-dom';
 
 const Home = (): ReactElement => {
-	const mw = useContext(MWContext);
-	const issues: Array<IssueType> = mw.getIssues();
+	const mw = useContext<MWProviderValue>(MWContext);
+	const issues: IssueType[] = mw.getIssues() || [];
 	const [page, setPage] = useState<number>(1);
 	const navigate = useNavigate();
 
 	const maxPage: number = ceil(issues.length / 2);
-	let currentIssues: Array<IssueType> = slice(issues, (page - 1) * 2, page * 2);
+	let currentIssues: IssueType[] = slice(issues, (page - 1) * 2, page * 2);
 
 	const pageChange = (event: ChangeEvent<unknown>, value: number): void => {
 		setPage(value);

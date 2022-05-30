@@ -4,6 +4,12 @@ export interface UserType {
 	fullName: string;
 }
 
+export interface CommentType {
+	body: string;
+	authorId: string;
+	createdAt: number;
+}
+
 export interface IssueType {
 	issueGuid: string;
 	status: string;
@@ -16,4 +22,5 @@ export interface IssueType {
 	version: number;
 	description: string;
 	previewUrl: string;
+	comments?: CommentType[];
 }

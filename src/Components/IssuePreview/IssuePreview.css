@@ -1,8 +1,8 @@
 #issue-preview {
   display: grid;
   grid-template-rows: 30px 100px;
-  grid-template-columns: 30% auto 20%;
-  grid-template-areas: "title title status" "preview data user";
+  grid-template-columns: 30% auto 10% 10%;
+  grid-template-areas: "title title status status" "preview data  comments user";
   padding: 10px;
   vertical-align: baseline;
 }
@@ -23,19 +23,39 @@
   max-width: 100%;
   max-height: 100px;
 }
+#issue-preview .comments {
+  grid-area: comments;
+  position: relative;
+  top: 24px;
+  margin-right: 0;
+  margin-left: auto;
+}
 #issue-preview .data {
   grid-area: data;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas: "location" "version" "timestamp";
   color: grey;
 }
+#issue-preview .data .data-location {
+  grid-area: location;
+}
+#issue-preview .data .data-version {
+  grid-area: version;
+}
+#issue-preview .data .data-timestamp {
+  grid-area: timestamp;
+}
 #issue-preview .data p {
-  margin: 0 0 5px 10px;
+  margin: 0;
 }
 #issue-preview .user {
   grid-area: user;
 }
 #issue-preview .user .user-avatar {
   position: relative;
-  top: 40%;
+  top: 20px;
   margin-right: 0;
   margin-left: auto;
   transform: scale(0.7);

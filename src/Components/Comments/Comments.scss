@@ -1,0 +1,16 @@
+#Comments {
+  .message-timestamp-container {
+	float: right;
+  }
+
+  .comments-input {
+	width: 75%;
+	max-width: calc(100% - 100px);
+  }
+
+  .comments-submit {
+	min-width: 100px;
+	width: 25%;
+	height: 55px;
+  }
+}
