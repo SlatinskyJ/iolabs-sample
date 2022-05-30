@@ -1,9 +1,10 @@
 import React, {ReactElement} from 'react';
 import moment from 'moment';
-import {Chip} from "@mui/material";
+import {Chip} from '@mui/material';
 
-import {IssueType} from "../utils/types";
-import Avatar from "../Avatar/Avatar";
+import {IssueType} from '../utils/types';
+import {DATE_FORMAT} from '../utils/constants';
+import Avatar from '../Avatar/Avatar';
 
 import './IssuePreview.scss';
 
@@ -22,7 +23,7 @@ const IssuePreview = ({issue, withDetails = false}: IssueProps): ReactElement =>
 		<div className="data">
 			<p>{issue.location}</p>
 			<p>{issue.version}</p>
-			<p>{createdDate.format('MMM D, YYYY')}</p>
+			<p>{createdDate.format(DATE_FORMAT)}</p>
 		</div>
 		{withDetails && issue.assignee &&
 			<div className="user">

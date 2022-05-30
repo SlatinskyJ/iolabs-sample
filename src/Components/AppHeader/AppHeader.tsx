@@ -10,11 +10,11 @@ import Avatar from '../Avatar/Avatar';
 import './AppHeader.scss';
 
 const AppHeader = (): ReactElement | null => {
-	const mw: MWProviderValue | null = useContext(MWContext);
+	const mw = useContext<MWProviderValue>(MWContext);
 
 	const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
 	const open: boolean = Boolean(anchorEl);
-	const user = mw?.getCurrentUser();
+	const user = mw.getCurrentUser();
 
 	const handleClick = (event: MouseEvent<HTMLButtonElement>): void => {
 		setAnchorEl(event.currentTarget);

@@ -10,8 +10,8 @@ import './Home.scss';
 import {useNavigate} from 'react-router-dom';
 
 const Home = (): ReactElement => {
-	const mw: MWProviderValue | null = useContext(MWContext);
-	const issues: IssueType[] = mw?.getIssues() || [];
+	const mw = useContext<MWProviderValue>(MWContext);
+	const issues: IssueType[] = mw.getIssues() || [];
 	const [page, setPage] = useState<number>(1);
 	const navigate = useNavigate();
 
